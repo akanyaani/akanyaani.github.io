@@ -1,78 +1,340 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abhay Kumar - Senior Research Engineer</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Abhay Kumar · LLM pre-training research</title>
+  <meta name="description" content="Abhay Kumar is co-founder of FrontiersMind and an LLM researcher working on pre-training: training stability, optimisation and scaling. Author of ZClip.">
+  <meta name="author" content="Abhay Kumar">
+  <link rel="canonical" href="https://akanyaani.github.io/">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#faf8f4" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#121311" media="(prefers-color-scheme: dark)">
+
+  <meta property="og:type" content="profile">
+  <meta property="og:title" content="Abhay Kumar · LLM pre-training research">
+  <meta property="og:description" content="Co-founder of FrontiersMind. Research on LLM pre-training: training stability, optimisation and scaling. Author of ZClip.">
+  <meta property="og:url" content="https://akanyaani.github.io/">
+  <meta property="og:image" content="https://akanyaani.github.io/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Abhay Kumar. LLM pre-training research: stability, optimisation, scale.">
+  <meta property="profile:first_name" content="Abhay">
+  <meta property="profile:last_name" content="Kumar">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@akanyaani">
+  <meta name="twitter:creator" content="@akanyaani">
+  <meta name="twitter:title" content="Abhay Kumar · LLM pre-training research">
+  <meta name="twitter:description" content="Co-founder of FrontiersMind. Research on LLM pre-training: training stability, optimisation and scaling. Author of ZClip.">
+  <meta name="twitter:image" content="https://akanyaani.github.io/og.png">
+
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+
+  <!-- Apply a saved theme before first paint to avoid a flash. -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Abhay Kumar",
+    "url": "https://akanyaani.github.io/",
+    "email": "mailto:akanyaani@gmail.com",
+    "jobTitle": "Co-Founder",
+    "worksFor": { "@type": "Organization", "name": "FrontiersMind" },
+    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Rajiv Gandhi Prodyogiki Vishwavidyalaya" },
+    "address": { "@type": "PostalAddress", "addressLocality": "Bengaluru", "addressCountry": "IN" },
+    "knowsAbout": ["Large language models", "LLM pre-training", "Training stability", "Gradient clipping", "Distributed training"],
+    "sameAs": [
+      "https://github.com/akanyaani",
+      "https://scholar.google.com/citations?user=s_JNyFkAAAAJ&hl=en",
+      "https://www.linkedin.com/in/akanyaani",
+      "https://x.com/akanyaani"
+    ]
+  }
+  </script>
 </head>
 <body>
-    <header>
-        <h1>Abhay Kumar</h1>
-        <p>Senior Research Engineer | Machine Learning and NLP Specialist</p>
-        <p>Dubai, UAE | +971 585829416 | <a href="mailto:akanyaani@gmail.com">akanyaani@gmail.com</a></p>
-        <p>
-            <a href="https://github.com/akanyaani">GitHub</a> |
-            <a href="https://www.linkedin.com/in/akanyaani">LinkedIn</a> |
-            <a href="https://scholar.google.com/citations?user=s_JNyFkAAAAJ&hl=en">Google Scholar</a>
-        </p>
-    </header>
+  <a class="skip" href="#main">Skip to content</a>
 
-    <section>
-        <h2>About Me</h2>
-        <p>Senior Research Engineer with 8+ years of experience in machine learning and NLP, specializing in the architecture, training dynamics, and optimization of Large Language Models (LLMs). Creator of ZClip for adaptive gradient clipping, passionate about scalable and efficient model training.</p>
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="#top" aria-label="Abhay Kumar, back to top">
+        <span class="mono-mark" aria-hidden="true">AK</span>
+        <span class="brand-name">Abhay Kumar</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#research">Research</a>
+        <a href="#open-source">Open source</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme" id="theme-toggle" type="button" aria-label="Switch to dark theme">
+        <svg class="i-moon" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>
+        <svg class="i-sun" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.7"/><path d="M12 2.5v2.5M12 19v2.5M2.5 12H5M19 12h2.5M5.3 5.3l1.8 1.8M16.9 16.9l1.8 1.8M5.3 18.7l1.8-1.8M16.9 7.1l1.8-1.8" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero wrap" id="top" aria-labelledby="hero-h">
+      <div class="hero-text">
+        <p class="eyebrow">LLM pre-training · Bengaluru, India</p>
+        <h1 id="hero-h">Abhay Kumar</h1>
+        <p class="lede">I work on how large language models are trained: <em>stability</em>, <em>optimisation</em> and <em>scale</em>.</p>
+        <p class="role">Co-founder, <strong>FrontiersMind</strong>, building open foundation models that are sovereign and efficient. Author of <a href="#pub-zclip">ZClip</a>.</p>
+        <ul class="links" aria-label="Profiles and contact">
+          <li><a href="https://github.com/akanyaani" rel="me noopener">GitHub</a></li>
+          <li><a href="https://scholar.google.com/citations?user=s_JNyFkAAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/akanyaani" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://x.com/akanyaani" rel="me noopener">X</a></li>
+          <li><a href="mailto:akanyaani@gmail.com">Email</a></li>
+        </ul>
+      </div>
+
+      <figure class="fig">
+        <div class="fig-plot">
+<svg viewBox="0 0 560 230" role="img" aria-labelledby="fig-t" preserveAspectRatio="xMidYMid meet">
+<title id="fig-t">Schematic of a gradient-norm trace with spikes clipped to an adaptive threshold</title>
+<line class="c-axis" x1="0" y1="212" x2="560" y2="212"/>
+<path class="c-raw" d="M0.0,137.0 L8.0,134.3 L16.0,138.6 L24.0,139.8 L32.0,143.5 L40.0,141.0 L48.0,135.5 L56.0,139.5 L64.0,137.4 L72.0,141.8 L80.0,141.9 L88.0,143.6 L96.0,153.0 L104.0,141.9 L112.0,144.2 L120.0,144.9 L128.0,155.9 L136.0,156.8 L144.0,153.4 L152.0,152.0 L160.0,149.0 L168.0,19.1 L176.0,115.6 L184.0,155.3 L192.0,151.4 L200.0,151.5 L208.0,157.1 L216.0,146.4 L224.0,152.4 L232.0,150.0 L240.0,159.0 L248.0,160.1 L256.0,158.8 L264.0,158.1 L272.0,155.2 L280.0,157.4 L288.0,161.2 L296.0,164.1 L304.0,162.5 L312.0,154.7 L320.0,164.7 L328.0,160.2 L336.0,159.8 L344.0,169.2 L352.0,162.4 L360.0,156.9 L368.0,172.9 L376.0,69.0 L384.0,164.7 L392.0,168.4 L400.0,162.6 L408.0,165.6 L416.0,172.6 L424.0,162.2 L432.0,163.3 L440.0,162.3 L448.0,160.3 L456.0,165.7 L464.0,167.2 L472.0,174.2 L480.0,120.7 L488.0,171.6 L496.0,171.2 L504.0,175.3 L512.0,174.2 L520.0,172.4 L528.0,164.1 L536.0,180.1 L544.0,177.6 L552.0,169.9 L560.0,164.5"/>
+<path class="c-thr" d="M0.0,125.8 L8.0,126.4 L16.0,126.5 L24.0,127.1 L32.0,127.7 L40.0,127.8 L48.0,128.3 L56.0,128.4 L64.0,129.0 L72.0,129.4 L80.0,129.7 L88.0,130.2 L96.0,130.4 L104.0,127.7 L112.0,128.5 L120.0,129.2 L128.0,129.8 L136.0,127.8 L144.0,126.9 L152.0,127.5 L160.0,128.4 L168.0,129.5 L176.0,124.7 L184.0,119.0 L192.0,119.7 L200.0,121.1 L208.0,122.4 L216.0,123.2 L224.0,124.4 L232.0,125.7 L240.0,127.0 L248.0,127.5 L256.0,128.1 L264.0,129.1 L272.0,130.3 L280.0,131.5 L288.0,132.7 L296.0,133.6 L304.0,134.1 L312.0,135.1 L320.0,136.1 L328.0,136.8 L336.0,137.9 L344.0,139.0 L352.0,139.0 L360.0,140.2 L368.0,140.9 L376.0,140.3 L384.0,134.7 L392.0,136.0 L400.0,137.0 L408.0,138.4 L416.0,139.6 L424.0,140.1 L432.0,141.2 L440.0,142.4 L448.0,143.5 L456.0,144.2 L464.0,145.3 L472.0,146.2 L480.0,146.2 L488.0,141.2 L496.0,142.0 L504.0,143.1 L512.0,143.7 L520.0,144.7 L528.0,145.9 L536.0,146.6 L544.0,146.6 L552.0,147.4 L560.0,148.6"/>
+<path class="c-clip" d="M0.0,137.0 L8.0,134.3 L16.0,138.6 L24.0,139.8 L32.0,143.5 L40.0,141.0 L48.0,135.5 L56.0,139.5 L64.0,137.4 L72.0,141.8 L80.0,141.9 L88.0,143.6 L96.0,153.0 L104.0,141.9 L112.0,144.2 L120.0,144.9 L128.0,155.9 L136.0,156.8 L144.0,153.4 L152.0,152.0 L160.0,149.0 L168.0,129.5 L176.0,124.7 L184.0,155.3 L192.0,151.4 L200.0,151.5 L208.0,157.1 L216.0,146.4 L224.0,152.4 L232.0,150.0 L240.0,159.0 L248.0,160.1 L256.0,158.8 L264.0,158.1 L272.0,155.2 L280.0,157.4 L288.0,161.2 L296.0,164.1 L304.0,162.5 L312.0,154.7 L320.0,164.7 L328.0,160.2 L336.0,159.8 L344.0,169.2 L352.0,162.4 L360.0,156.9 L368.0,172.9 L376.0,140.3 L384.0,164.7 L392.0,168.4 L400.0,162.6 L408.0,165.6 L416.0,172.6 L424.0,162.2 L432.0,163.3 L440.0,162.3 L448.0,160.3 L456.0,165.7 L464.0,167.2 L472.0,174.2 L480.0,146.2 L488.0,171.6 L496.0,171.2 L504.0,175.3 L512.0,174.2 L520.0,172.4 L528.0,164.1 L536.0,180.1 L544.0,177.6 L552.0,169.9 L560.0,164.5"/>
+<circle class="c-dot" cx="168.0" cy="129.5" r="3.2"/>
+<circle class="c-dot" cx="376.0" cy="140.3" r="3.2"/>
+<circle class="c-dot" cx="480.0" cy="146.2" r="3.2"/>
+</svg>
+        </div>
+        <figcaption>
+          <span class="key"><i class="k k-raw"></i>raw gradient norm</span>
+          <span class="key"><i class="k k-thr"></i>adaptive threshold</span>
+          <span class="key"><i class="k k-clip"></i>clipped</span>
+          <span class="fig-note">Schematic, not experimental data: the idea behind ZClip.</span>
+        </figcaption>
+      </figure>
     </section>
 
-    <section>
-        <h2>Skills</h2>
-        <ul>
-            <li><strong>Deep Learning:</strong> Transformers, LSTMs, CNNs, RAG</li>
-            <li><strong>Programming:</strong> Python, Core Java</li>
-            <li><strong>ML/DL Frameworks:</strong> PyTorch, TensorFlow, scikit-learn</li>
-            <li><strong>Distributed Training:</strong> PyTorch Lightning, FSDP, DeepSpeed</li>
-            <li><strong>Mathematics:</strong> Linear Algebra, Calculus, Probability, Statistics</li>
-        </ul>
+    <!-- ABOUT -->
+    <section class="sec wrap" id="about" aria-labelledby="about-h">
+      <div class="sec-label"><span class="num">01</span><h2 id="about-h">About</h2></div>
+      <div class="sec-body prose">
+        <p>I am an LLM researcher and the co-founder of FrontiersMind. My work is on pre-training: what makes large runs diverge, how to initialise and control variance so they do not, and how to build the distributed pipelines that train them.</p>
+        <p>Before FrontiersMind I was a Senior LLM Research Engineer at the Technology Innovation Institute in Abu Dhabi, working on the Falcon LLMs, and at BluOrion in Dubai, where I designed ZClip, an adaptive gradient clipping algorithm that removes the need to skip batches by hand, and worked on initialisation and variance control. I have co-led the pre-training of 7B and 13B parameter models on 15 trillion tokens. Earlier, at yellow.ai, I co-authored the Komodo LLM for Indonesia's regional languages.</p>
+        <p>I have worked in machine learning and NLP for more than ten years. Several from-scratch implementations I wrote along the way, of GPT-2 in TensorFlow and of LLaMA in PyTorch, are open source.</p>
+        <dl class="facts">
+          <div><dt>7B · 13B</dt><dd>parameter models whose pre-training I co-led</dd></div>
+          <div><dt>15T</dt><dd>tokens in that pre-training run</dd></div>
+          <div><dt>FSDP · DeepSpeed · Lightning</dt><dd>distributed training stacks I build pipelines on</dd></div>
+        </dl>
+      </div>
     </section>
 
-    <section>
-        <h2>Work Experience</h2>
-        <h3>BluOrion – Dubai (09/2024 - Present)</h3>
-        <ul>
-            <li>Designed ZClip: Adaptive Gradient Clipping for stable LLM training.</li>
-            <li>Developed Layer Index Rescaling and Target Variance Rescaling.</li>
-            <li>Architected scalable training pipelines for 7B-parameter LLMs.</li>
-        </ul>
-
-        <h3>Yellow.ai – Bengaluru (12/2020 - 09/2024)</h3>
-        <ul>
-            <li>Co-authored Komodo, an open-source Indonesian LLM.</li>
-            <li>Fine-tuned task-specific LLMs and boosted conversation completions by 15%.</li>
-        </ul>
-
-        <h3>AVR Edge Networks – Bengaluru (09/2017 - 12/2020)</h3>
-        <ul>
-            <li>Built deep learning-based ranking models improving engagement by 30%.</li>
-            <li>Developed internal pretraining frameworks reducing R&D time by 40%.</li>
-        </ul>
-
-        <h3>Scry Analytics – Gurgaon (05/2016 - 09/2017)</h3>
-        <ul>
-            <li>Built opinion mining models and improved precision by 50%.</li>
-        </ul>
-
-        <h3>Gauge Data Solutions – Uttar Pradesh (05/2015 - 05/2016)</h3>
-        <ul>
-            <li>Built classification models for legal documents.</li>
-        </ul>
+    <!-- RESEARCH -->
+    <section class="sec wrap" id="research" aria-labelledby="research-h">
+      <div class="sec-label"><span class="num">02</span><h2 id="research-h">Research</h2>
+        <p class="sec-aside"><a href="https://scholar.google.com/citations?user=s_JNyFkAAAAJ&amp;hl=en" rel="noopener">Google Scholar<span aria-hidden="true"> ↗</span></a></p>
+      </div>
+      <div class="sec-body">
+        <ol class="pubs" reversed>
+          <li class="pub" id="pub-zclip">
+            <p class="pub-meta"><span>2025</span><span>arXiv preprint</span><span class="tag">First author</span></p>
+            <h3><a href="https://arxiv.org/abs/2504.02507" rel="noopener">ZClip: Adaptive Spike Mitigation for LLM Pre-Training</a></h3>
+            <p class="authors"><b>Abhay Kumar</b>, Louis Owen, Nilabhra Roy Chowdhury, Fabian Güra</p>
+            <p class="gist">An adaptive gradient clipping algorithm that sets its threshold from running statistics of the gradient norm, using z-score anomaly detection to catch the spikes that cause loss blow-ups without interfering with convergence otherwise.</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2504.02507" rel="noopener">arXiv:2504.02507</a><a href="https://github.com/bluorion-com/ZClip" rel="noopener">Code</a></p>
+          </li>
+          <li class="pub">
+            <p class="pub-meta"><span>2025</span><span>arXiv preprint</span></p>
+            <h3><a href="https://arxiv.org/abs/2503.22329" rel="noopener">A Refined Analysis of Massive Activations in LLMs</a></h3>
+            <p class="authors">Louis Owen, Nilabhra Roy Chowdhury, <b>Abhay Kumar</b>, Fabian Güra</p>
+            <p class="gist">An analysis of massive activations across a broad range of LLM architectures. Not all of them are detrimental, and known mitigations are model-specific; pairing Target Variance Rescaling with Attention KV bias or Dynamic Tanh balances mitigation with downstream performance.</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2503.22329" rel="noopener">arXiv:2503.22329</a><a href="https://github.com/bluorion-com/refine_massive_activations" rel="noopener">Code</a></p>
+          </li>
+          <li class="pub">
+            <p class="pub-meta"><span>2025</span><span>arXiv preprint</span></p>
+            <h3><a href="https://arxiv.org/abs/2503.17500" rel="noopener">Variance Control via Weight Rescaling in LLM Pre-training</a></h3>
+            <p class="authors">Louis Owen, <b>Abhay Kumar</b>, Nilabhra Roy Chowdhury, Fabian Güra</p>
+            <p class="gist">Introduces Layer Index Rescaling for weight initialisation and Target Variance Rescaling for variance control. On a 1B parameter LLaMA model, better variance management improves downstream performance by up to 4.6% and reduces extreme activation values.</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2503.17500" rel="noopener">arXiv:2503.17500</a><a href="https://github.com/bluorion-com/weight_rescaling" rel="noopener">Code</a></p>
+          </li>
+          <li class="pub">
+            <p class="pub-meta"><span>2024</span><span>arXiv preprint</span></p>
+            <h3><a href="https://arxiv.org/abs/2403.09362" rel="noopener">Komodo: A Linguistic Expedition into Indonesia's Regional Languages</a></h3>
+            <p class="authors">Louis Owen, Vishesh Tripathi, <b>Abhay Kumar</b>, Biddwan Ahmed</p>
+            <p class="gist">Komodo-7B, a family of 7-billion-parameter LLMs that work across Indonesian, English and 11 regional languages of Indonesia.</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2403.09362" rel="noopener">arXiv:2403.09362</a><a href="https://huggingface.co/Yellow-AI-NLP/komodo-7b-base" rel="noopener">Model</a></p>
+          </li>
+          <li class="pub">
+            <p class="pub-meta"><span>2023</span><span>ICAICTA 2023 (IEEE)</span></p>
+            <h3><a href="https://arxiv.org/abs/2306.08852" rel="noopener">BED: Bi-Encoder-Based Detectors for Out-of-Distribution Detection</a></h3>
+            <p class="authors">Louis Owen, Biddwan Ahmed, <b>Abhay Kumar</b></p>
+            <p class="gist">Bi-encoder-based detectors for out-of-distribution detection in NLP, with a comparison of OOD methods and feature extractors on CLINC150, ROSTD-Coarse, SNIPS and YELLOW.</p>
+            <p class="pub-links"><a href="https://arxiv.org/abs/2306.08852" rel="noopener">arXiv:2306.08852</a><a href="https://ieeexplore.ieee.org/document/10389907" rel="noopener">IEEE Xplore</a></p>
+          </li>
+        </ol>
+      </div>
     </section>
 
-    <section>
-        <h2>Education</h2>
-        <p>Bachelor of Technology: Computer Science and Engineering, Rajiv Gandhi Technical University, Bhopal, MP (09/2009 - 12/2014)</p>
+    <!-- OPEN SOURCE -->
+    <section class="sec wrap" id="open-source" aria-labelledby="oss-h">
+      <div class="sec-label"><span class="num">03</span><h2 id="oss-h">Open source</h2>
+        <p class="sec-aside"><a href="https://github.com/akanyaani?tab=repositories" rel="noopener">All repositories<span aria-hidden="true"> ↗</span></a></p>
+      </div>
+      <div class="sec-body">
+        <ul class="projects">
+          <li class="proj">
+            <p class="proj-top"><span class="lang">Python</span><span class="stars new">New, 2026</span></p>
+            <h3><a href="https://github.com/FrontiersMindAI/faithserve" rel="noopener">faithserve</a></h3>
+            <p>Is this endpoint serving this open-weight model faithfully? A CLI that runs black-box checks against an OpenAI-compatible server: chat template parity, sampling parameters, streaming and tool calls.</p>
+            <p class="proj-foot">FrontiersMindAI/faithserve</p>
+          </li>
+          <li class="proj">
+            <p class="proj-top"><span class="lang">PyTorch</span><span class="stars" title="GitHub stars as of October 2026">★ 153</span></p>
+            <h3><a href="https://github.com/bluorion-com/ZClip" rel="noopener">ZClip</a></h3>
+            <p>Official implementation of the ZClip paper: adaptive gradient clipping from EMA statistics of the gradient norm, with optional PyTorch Lightning support.</p>
+            <p class="proj-foot">bluorion-com/ZClip</p>
+          </li>
+          <li class="proj">
+            <p class="proj-top"><span class="lang">TensorFlow 2</span><span class="stars" title="GitHub stars as of October 2026">★ 267</span></p>
+            <h3><a href="https://github.com/akanyaani/gpt-2-tensorflow2.0" rel="noopener">gpt-2-tensorflow2.0</a></h3>
+            <p>OpenAI GPT-2 pre-training and sequence prediction, implemented in TensorFlow 2.0.</p>
+            <p class="proj-foot">akanyaani/gpt-2-tensorflow2.0</p>
+          </li>
+          <li class="proj">
+            <p class="proj-top"><span class="lang">PyTorch</span><span class="stars" title="GitHub stars as of October 2026">★ 39</span></p>
+            <h3><a href="https://github.com/akanyaani/miniLLAMA" rel="noopener">miniLLAMA</a></h3>
+            <p>A compact implementation of the LLaMA and LLaMA 2 architectures for training and inference, written to make the differences from GPT easy to see.</p>
+            <p class="proj-foot">akanyaani/miniLLAMA</p>
+          </li>
+          <li class="proj">
+            <p class="proj-top"><span class="lang">TensorFlow 2</span><span class="stars" title="GitHub stars as of October 2026">★ 41</span></p>
+            <h3><a href="https://github.com/akanyaani/ranknet-tensorflow2.0" rel="noopener">ranknet-tensorflow2.0</a></h3>
+            <p>Learning to rank, from RankNet to LambdaRank, implemented in TensorFlow 2.0.</p>
+            <p class="proj-foot">akanyaani/ranknet-tensorflow2.0</p>
+          </li>
+          <li class="proj">
+            <p class="proj-top"><span class="lang">TensorFlow</span><span class="stars" title="GitHub stars as of October 2026">★ 7</span></p>
+            <h3><a href="https://github.com/akanyaani/minGPTF" rel="noopener">minGPTF</a></h3>
+            <p>A TensorFlow re-implementation of Andrej Karpathy's minGPT training code.</p>
+            <p class="proj-foot">akanyaani/minGPTF</p>
+          </li>
+        </ul>
+        <p class="footnote">Star counts as of October 2026.</p>
+      </div>
     </section>
 
-    <footer>
-        <p>&copy; 2025 Abhay Kumar | Built with ❤️ using GitHub Pages</p>
-    </footer>
+    <!-- EXPERIENCE -->
+    <section class="sec wrap" id="experience" aria-labelledby="exp-h">
+      <div class="sec-label"><span class="num">04</span><h2 id="exp-h">Experience</h2></div>
+      <div class="sec-body">
+        <ol class="timeline">
+          <li class="job now">
+            <p class="when">May 2026 – Present</p>
+            <div class="what">
+              <h3>FrontiersMind</h3>
+              <p class="title">Co-Founder · Bengaluru</p>
+              <p>Open foundation models, sovereign and efficient.</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Sep 2025 – May 2026</p>
+            <div class="what">
+              <h3>Technology Innovation Institute</h3>
+              <p class="title">Senior LLM Research Engineer · Abu Dhabi</p>
+              <p>Worked on the Falcon LLMs, with a focus on pre-training, model evaluation and post-training refinement.</p>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Sep 2024 – Aug 2025</p>
+            <div class="what">
+              <h3>BluOrion</h3>
+              <p class="title">Senior LLM Research Engineer · Dubai</p>
+              <ul>
+                <li>Designed and led the development of ZClip, an adaptive gradient clipping algorithm that improves stability and eliminates manual batch skipping during LLM training.</li>
+                <li>Worked on initialisation and variance control techniques to improve LLM performance.</li>
+                <li>Explored parameter-efficient Transformer designs using factorised embeddings and low-rank attention.</li>
+                <li>Contributed to distributed pre-training recipe design and built training pipelines on FSDP, PyTorch Lightning and DeepSpeed, used to train 1B to 13B parameter models.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Dec 2020 – Sep 2024</p>
+            <div class="what">
+              <h3>yellow.ai</h3>
+              <p class="title">Research Scientist, NLP · Bengaluru</p>
+              <ul>
+                <li>Co-author of the Komodo LLM.</li>
+                <li>Trained and deployed task-specific language models in production.</li>
+                <li>Built embedding and generative zero-shot models with distributed pre-training, reducing unidentified utterances by 30%.</li>
+                <li>Trained custom GPT and BERT models from scratch on in-house chat data for generation and embeddings.</li>
+              </ul>
+            </div>
+          </li>
+          <li class="job">
+            <p class="when">Sep 2017 – Dec 2020</p>
+            <div class="what">
+              <h3>EdGE Networks</h3>
+              <p class="title">Senior Data Scientist, NLP (from Jul 2018) · Bengaluru</p>
+              <p>Neural ranking and job recommendation models. Implemented a Transformer autoencoder, GPT-2 and a custom autoregressive transformer from scratch in TensorFlow 2.0, with distributed pre-training on a large corpus.</p>
+            </div>
+          </li>
+        </ol>
+
+        <h3 class="sub">Earlier</h3>
+        <ul class="earlier">
+          <li><span class="when">2016 – 2017</span><span><b>Scry Analytics</b>, Data Scientist, Gurgaon. Opinion mining, NER and phrase extraction with LSTMs and CNNs.</span></li>
+          <li><span class="when">2015 – 2016</span><span><b>Gauge Data Solutions</b>, Data Analyst, Noida. Web crawling and sequence classification for legal documents.</span></li>
+          <li><span class="when">2013 – 2014</span><span><b>Anyaani Technology</b>, Co-Founder, Noida. Ran Bindaaslo, an online marketplace.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="sec wrap" id="education" aria-labelledby="edu-h">
+      <div class="sec-label"><span class="num">05</span><h2 id="edu-h">Education</h2></div>
+      <div class="sec-body">
+        <ul class="earlier">
+          <li><span class="when">2009 – 2014</span><span><b>Rajiv Gandhi Prodyogiki Vishwavidyalaya</b>, Bachelor of Technology, Computer Science.</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="sec wrap contact" id="contact" aria-labelledby="contact-h">
+      <div class="sec-label"><span class="num">06</span><h2 id="contact-h">Contact</h2></div>
+      <div class="sec-body">
+        <p class="contact-line">Working on LLM pre-training, or on serving open models? Write to me at <a href="mailto:akanyaani@gmail.com">akanyaani@gmail.com</a>.</p>
+        <ul class="links" aria-label="Profiles">
+          <li><a href="https://github.com/akanyaani" rel="me noopener">GitHub</a></li>
+          <li><a href="https://scholar.google.com/citations?user=s_JNyFkAAAAJ&amp;hl=en" rel="me noopener">Google Scholar</a></li>
+          <li><a href="https://www.linkedin.com/in/akanyaani" rel="me noopener">LinkedIn</a></li>
+          <li><a href="https://x.com/akanyaani" rel="me noopener">X</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <p>© 2026 Abhay Kumar</p>
+      <p>Last updated October 2026</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
 </body>
 </html>
