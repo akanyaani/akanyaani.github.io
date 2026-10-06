@@ -4,7 +4,7 @@
    ------------------------------------------------------------------ */
 
 :root {
-  --bg: #faf8f4;
+  --bg: #ffffff;
   --bg-raised: #ffffff;
   --ink: #1b1a17;
   --ink-soft: #3b3933;
@@ -21,21 +21,6 @@
 
   --wrap: 1080px;
   --gutter: clamp(20px, 5vw, 48px);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #121311;
-    --bg-raised: #191a18;
-    --ink: #edebe5;
-    --ink-soft: #d3d0c7;
-    --muted: #a5a195;
-    --rule: #2a2b27;
-    --rule-strong: #3d3e38;
-    --accent: #ff9159;
-    --accent-soft: rgba(255, 145, 89, 0.12);
-    --focus: #ff9159;
-  }
 }
 
 :root[data-theme="dark"] {
@@ -187,10 +172,6 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 /* Show the icon for the theme you would switch TO. */
 .theme .i-sun { display: none; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .theme .i-sun { display: block; }
-  :root:not([data-theme="light"]) .theme .i-moon { display: none; }
-}
 :root[data-theme="dark"] .theme .i-sun { display: block; }
 :root[data-theme="dark"] .theme .i-moon { display: none; }
 
@@ -203,6 +184,18 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
   align-items: end;
   padding-top: clamp(56px, 10vw, 128px);
   padding-bottom: clamp(56px, 8vw, 104px);
+}
+
+.portrait {
+  display: block;
+  width: 132px;
+  height: 132px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: 50% 20%;
+  background: #ffffff;
+  border: 1px solid var(--rule-strong);
+  margin-bottom: 28px;
 }
 
 .eyebrow {

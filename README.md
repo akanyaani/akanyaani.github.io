@@ -9,7 +9,7 @@ Plain HTML, CSS and a few lines of JavaScript. There is no build step: GitHub Pa
 | File | What it is |
 | --- | --- |
 | `index.html` | All of the content. Each section is marked with a comment (`HERO`, `ABOUT`, `RESEARCH`, ...). |
-| `style.css` | Styles. Colours for the light and dark themes are variables at the top. |
+| `style.css` | Styles. Colours are variables at the top. The site is white by default, with an optional dark theme. |
 | `script.js` | The light/dark theme toggle. |
 | `favicon.svg` | Browser tab icon. |
 | `og.png` | Preview image used when the link is shared (1200 x 630). |

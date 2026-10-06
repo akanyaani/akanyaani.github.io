@@ -1,16 +1,12 @@
-// Theme toggle. Follows the system setting until the visitor picks a theme,
-// then remembers the choice in localStorage.
+// Theme toggle. The site is light (white) by default; a visitor can switch to
+// dark, and the choice is remembered in localStorage.
 (function () {
   var root = document.documentElement;
   var button = document.getElementById("theme-toggle");
   if (!button) return;
 
-  var systemDark = window.matchMedia("(prefers-color-scheme: dark)");
-
   function current() {
-    var forced = root.getAttribute("data-theme");
-    if (forced === "light" || forced === "dark") return forced;
-    return systemDark.matches ? "dark" : "light";
+    return root.getAttribute("data-theme") === "dark" ? "dark" : "light";
   }
 
   function label() {
@@ -29,6 +25,5 @@
     label();
   });
 
-  if (systemDark.addEventListener) systemDark.addEventListener("change", label);
   label();
 })();
