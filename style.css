@@ -272,6 +272,7 @@ h1 {
   letter-spacing: -0.015em;
   color: var(--ink);
 }
+.hl dd b { color: var(--ink); font-weight: 600; }
 .hl dd { margin: 6px 0 0; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
 
 /* ---------- sections ---------- */
@@ -410,7 +411,7 @@ h2 {
   text-transform: uppercase;
   color: var(--muted);
 }
-.stars { white-space: nowrap; }
+.stars { white-space: nowrap; font-weight: 700; color: var(--ink); }
 .stars.new { color: var(--accent); }
 
 .proj h3 {
