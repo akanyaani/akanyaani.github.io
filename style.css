@@ -179,23 +179,23 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  gap: clamp(32px, 5vw, 72px);
-  align-items: end;
-  padding-top: clamp(56px, 10vw, 128px);
-  padding-bottom: clamp(56px, 8vw, 104px);
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: clamp(28px, 5vw, 64px);
+  align-items: center;
+  padding-top: clamp(40px, 7vw, 84px);
+  padding-bottom: clamp(36px, 5vw, 60px);
 }
 
 .portrait {
   display: block;
-  width: 132px;
-  height: 132px;
+  width: clamp(150px, 20vw, 232px);
+  height: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
   object-fit: cover;
   object-position: 50% 20%;
   background: #ffffff;
   border: 1px solid var(--rule-strong);
-  margin-bottom: 28px;
 }
 
 .eyebrow {
@@ -210,7 +210,7 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 h1 {
   font-family: var(--serif);
   font-weight: 400;
-  font-size: clamp(3rem, 8.4vw, 5.6rem);
+  font-size: clamp(2.6rem, 6vw, 4.2rem);
   line-height: 0.98;
   letter-spacing: -0.028em;
 }
@@ -221,14 +221,14 @@ h1 {
   line-height: 1.28;
   letter-spacing: -0.012em;
   color: var(--ink);
-  margin-top: 28px;
-  max-width: 21em;
+  margin-top: 20px;
+  max-width: 24em;
   text-wrap: balance;
 }
 .lede em { font-style: italic; color: var(--accent); }
 
 .role {
-  margin-top: 20px;
+  margin-top: 14px;
   color: var(--muted);
   max-width: 34em;
 }
@@ -238,7 +238,7 @@ h1 {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 32px;
+  margin-top: 24px;
 }
 .links a {
   display: inline-block;
@@ -252,66 +252,24 @@ h1 {
 }
 .links a:hover { border-color: var(--accent); background: var(--accent-soft); }
 
-/* hero figure */
+/* highlights */
 
-.fig { min-width: 0; }
-.fig-plot {
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 4px;
+.hl {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px clamp(20px, 3vw, 40px);
+  margin: 0;
+  padding-block: 28px;
+  border-top: 1px solid var(--rule);
 }
-.fig svg { display: block; width: 100%; height: auto; overflow: visible; }
-
-.c-axis { stroke: var(--rule-strong); stroke-width: 1; }
-.c-raw {
-  fill: none;
-  stroke: var(--muted);
-  stroke-width: 1.1;
-  stroke-linejoin: round;
-  opacity: 0.55;
+.hl dt {
+  font-family: var(--serif);
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  color: var(--accent);
 }
-.c-thr {
-  fill: none;
-  stroke: var(--accent);
-  stroke-width: 1.3;
-  stroke-dasharray: 3 5;
-  stroke-linecap: round;
-}
-.c-clip {
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 2;
-  stroke-linejoin: round;
-  stroke-linecap: round;
-}
-.c-dot { fill: var(--accent); stroke: var(--bg); stroke-width: 2; }
-
-/* The clipped trace draws itself once on load. The resting state is the
-   fully drawn line, so nothing is hidden if animations do not run. */
-@media (prefers-reduced-motion: no-preference) {
-  .c-clip {
-    stroke-dasharray: 1400;
-    animation: draw 1.8s 0.15s cubic-bezier(0.4, 0, 0.2, 1) backwards;
-  }
-  .c-dot { animation: appear 0.4s 1.7s ease backwards; }
-}
-@keyframes draw { from { stroke-dashoffset: 1400; } to { stroke-dashoffset: 0; } }
-@keyframes appear { from { opacity: 0; } to { opacity: 1; } }
-
-figcaption {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 18px;
-  margin-top: 12px;
-  font-family: var(--mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.02em;
-  color: var(--muted);
-}
-.key { display: inline-flex; align-items: center; gap: 7px; white-space: nowrap; }
-.k { display: inline-block; width: 18px; height: 0; border-top: 2px solid var(--ink); }
-.k-raw { border-top: 1px solid var(--muted); opacity: 0.7; }
-.k-thr { border-top: 2px dotted var(--accent); }
-.fig-note { flex-basis: 100%; }
+.hl dd { margin: 6px 0 0; font-size: 0.88rem; line-height: 1.45; color: var(--muted); }
 
 /* ---------- sections ---------- */
 
@@ -319,7 +277,7 @@ figcaption {
   display: grid;
   grid-template-columns: 200px minmax(0, 1fr);
   column-gap: clamp(28px, 5vw, 72px);
-  padding-block: clamp(48px, 7vw, 88px);
+  padding-block: clamp(36px, 5vw, 60px);
   position: relative;
 }
 .sec::before {
@@ -362,26 +320,9 @@ h2 {
   margin-bottom: 1.2em;
 }
 
-.facts {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 24px;
-  margin-top: 44px;
-  padding-top: 26px;
-  border-top: 1px solid var(--rule);
-}
-.facts dt {
-  font-family: var(--serif);
-  font-size: 1.5rem;
-  line-height: 1.2;
-  letter-spacing: -0.01em;
-}
-.facts div:last-child dt { font-size: 1.12rem; line-height: 1.6; }
-.facts dd { margin-top: 6px; font-size: 0.86rem; line-height: 1.45; color: var(--muted); }
-
 /* ---------- publications ---------- */
 
-.pub { padding-block: 30px; border-top: 1px solid var(--rule); }
+.pub { padding-block: 22px; border-top: 1px solid var(--rule); }
 .pub:first-child { padding-top: 0; border-top: 0; }
 .pub:last-child { padding-bottom: 0; }
 
@@ -543,7 +484,7 @@ h2 {
 }
 
 .sub {
-  margin-top: 44px;
+  margin-top: 30px;
   margin-bottom: 14px;
   font-family: var(--mono);
   font-size: 0.74rem;
@@ -592,8 +533,7 @@ h2 {
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
-  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; }
-  .fig { max-width: 560px; }
+  .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sec { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
   .sec-label { position: static; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
   .num { margin-bottom: 0; }
@@ -604,13 +544,14 @@ h2 {
   body { font-size: 1rem; }
   .nav { display: none; }
   .projects { grid-template-columns: minmax(0, 1fr); }
-  .facts { grid-template-columns: minmax(0, 1fr); gap: 18px; }
+  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 22px; }
+  .portrait { width: 128px; }
   .job, .earlier li { grid-template-columns: minmax(0, 1fr); }
   .when { padding-top: 0; }
 }
 
 @media print {
-  .top, .theme, .fig { display: none; }
+  .top, .theme { display: none; }
   body { background: #fff; color: #000; }
   .sec { display: block; padding-block: 18px; }
 }
