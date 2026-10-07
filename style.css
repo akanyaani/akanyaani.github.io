@@ -179,8 +179,9 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .hero {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: clamp(28px, 5vw, 64px);
+  grid-template-columns: 200px minmax(0, 1fr);
+  column-gap: clamp(28px, 5vw, 72px);
+  row-gap: 22px;
   align-items: center;
   padding-top: clamp(40px, 7vw, 84px);
   padding-bottom: clamp(36px, 5vw, 60px);
@@ -188,7 +189,8 @@ a:hover { color: var(--accent); text-decoration-color: currentColor; }
 
 .portrait {
   display: block;
-  width: clamp(150px, 20vw, 232px);
+  width: 100%;
+  max-width: 200px;
   height: auto;
   aspect-ratio: 1;
   border-radius: 50%;
@@ -533,6 +535,7 @@ h2 {
 /* ---------- responsive ---------- */
 
 @media (max-width: 900px) {
+  .hero { grid-template-columns: 150px minmax(0, 1fr); column-gap: 28px; }
   .hl { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sec { grid-template-columns: minmax(0, 1fr); row-gap: 28px; }
   .sec-label { position: static; display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 14px; }
@@ -544,7 +547,7 @@ h2 {
   body { font-size: 1rem; }
   .nav { display: none; }
   .projects { grid-template-columns: minmax(0, 1fr); }
-  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; gap: 22px; }
+  .hero { grid-template-columns: minmax(0, 1fr); align-items: start; }
   .portrait { width: 128px; }
   .job, .earlier li { grid-template-columns: minmax(0, 1fr); }
   .when { padding-top: 0; }
